@@ -87,9 +87,22 @@ p {
 
 <div class="date">Janvier / Février 2026 - Sainte Marie</div>
 
-<button onclick="alert('Réservation effectuée !')">Réserver</button>
+<button id="reserveBtn">Réserver</button>
 
 <p>Venez profiter de notre événement fruité 🍉🎉</p>
+
+<audio id="clicSound" src="https://www.soundjay.com/button/sounds/button-16.mp3"></audio>
+
+<script>
+const btn = document.getElementById("reserveBtn");
+const clicSound = document.getElementById("clicSound");
+
+btn.addEventListener("click", () => {
+  clicSound.currentTime = 0; // recommence le son si déjà joué
+  clicSound.play(); // joue le son
+  alert("Réservation effectuée !");
+});
+</script>
 
 </body>
 </html>
